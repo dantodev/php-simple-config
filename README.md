@@ -76,3 +76,4 @@ Returns config instance.
 
 #### `remove($path)`
 Remove config entry on given path if existing. Returns map instance.
+
