@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/dtkahl/php-simple-config/v/stable)](https://packagist.org/packages/dtkahl/php-simple-config)
+[![License](https://poser.pugx.org/dtkahl/php-simple-config/license)](https://packagist.org/packages/dtkahl/php-simple-config)
+[![Build Status](https://travis-ci.org/dtkahl/php-simple-config.svg?branch=master)](https://travis-ci.org/dtkahl/php-simple-config)
+
+
 # PHP simple config
 
 This is a simple config handler class with dot-syntax for PHP.
