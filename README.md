@@ -31,7 +31,7 @@ use Dtkahl\SimpleConfig\Config;
 Create new Config instance:
 
 ```php
-$map = new Config([
+$config = new Config([
     "database" => [
       "host" => "localhost",
       "port" => 1337,
@@ -48,7 +48,7 @@ $map = new Config([
 you can also load Config from file:
 
 ```php
-$map = new Config(require("./config.php"));
+$config = new Config(require("./config.php"));
 ```
 
 
@@ -82,5 +82,5 @@ Set config entry on given path (override if existing). Set parameter `$force` if
 Returns config instance.
 
 #### `remove($path)`
-Remove config entry on given path if existing. Returns map instance.
+Remove config entry on given path if existing. Returns config instance.
 
