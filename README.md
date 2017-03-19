@@ -25,17 +25,19 @@ composer require dtkahl/php-simple-config
 Refer namespace:
 
 ```
-use Dtkahl\SimpleCache\Cache;
+use Dtkahl\SimpleConfig\Config;
 ```
 
-Create new Cache instance:
+Create new Config instance:
 
 ```php
-$map = new Cache([
+$map = new Config([
     "database" => [
       "host" => "localhost",
       "port" => 1337,
-      "username" => "developer",
+      "username" => "developer",> 1337,
+38
+      "usernam
       "password" => "secret",
     ],
     "debug" => true,
@@ -46,7 +48,7 @@ $map = new Cache([
 you can also load Config from file:
 
 ```php
-$map = new Cache(require("./config.php"));
+$map = new Config(require("./config.php"));
 ```
 
 
