@@ -84,3 +84,5 @@ Returns config instance.
 #### `remove($path)`
 Remove config entry on given path if existing. Returns config instance.
 
+#### `setAlias($alias, $path)`
+Add an alias for a given path. Alias should not contain a dot for obvious reason.
