@@ -21,7 +21,7 @@ class SimpleConfigTest extends \PHPUnit_Framework_TestCase
             ],
             "lv1c" => [],
             "foo" => "bar"
-        ]);
+        ], ["_a" => "lv1a.lv2a"]);
     }
 
     public function testHas()
@@ -66,6 +66,12 @@ class SimpleConfigTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertNull($this->config->remove("lv1a.lv12")->get("lv1a.lv12"));
         $this->assertNull($this->config->remove("foo")->get("foo"));
+    }
+
+    public function testAliases()
+    {
+        $this->assertEquals(["lv3a" => "foobarA"], $this->config->get("_a"));
+        $this->assertEquals("foobarA", $this->config->get("_a.lv3a"));
     }
 
 }

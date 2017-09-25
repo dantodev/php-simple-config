@@ -4,10 +4,21 @@ class Config
 {
 
     private $_data = [];
+    private $_aliases = [];
 
-    public function __construct(array $data)
+    public function __construct(array $data = [], array $alias = [])
     {
         $this->_data = $data;
+        $this->_aliases = $alias;
+    }
+
+    /**
+     * @param string $alias
+     * @param string $path
+     */
+    public function setAlias($alias, $path)
+    {
+        $this->_aliases[$alias] = $path;
     }
 
     /**
@@ -78,7 +89,13 @@ class Config
      */
     private function _splitPath($path)
     {
-        return explode('.', $path);
+        $keys = explode('.', $path);
+
+        if (count($keys) > 0 && array_key_exists($keys[0], $this->_aliases)) {
+            $keys = array_merge(explode('.', $this->_aliases[array_shift($keys)]), $keys);
+        }
+
+        return $keys;
     }
 
     /**
